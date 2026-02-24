@@ -1,78 +1,53 @@
-
-<!DOCTYPE html>
-<html>
+<!DOCTYPE html><html>
 <head>
-<title>YugMind - Insta Bio Generator</title>
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Exercise AI - Free Insta Bio Generator | Best Instagram Bio Ideas</title>
+<meta name="description" content="Generate cool and stylish Instagram bios instantly with Exercise AI. Perfect for Indian users, catchy, creative & free!">
+<meta name="keywords" content="Instagram bio generator, insta bio ideas, Exercise AI, best Insta bios, Indian Instagram bio, free bio creator">
+<meta name="author" content="Exercise AI">
+<meta name="google-site-verification" content="xxxxxxxxx" />
+<link rel="icon" href="https://sayyedahil248-svg.github.io/yugmind/favicon.ico">
 <style>
-body{
-margin:0;
-font-family:Arial;
-background:linear-gradient(135deg,#141e30,#243b55);
-color:white;
-text-align:center;
-padding:20px;
-}
-h1{
-margin-top:30px;
-}
-input{
-padding:10px;
-width:80%;
-max-width:300px;
-border-radius:10px;
-border:none;
-margin-top:20px;
-}
-button{
-padding:10px 20px;
-border:none;
-border-radius:20px;
-background:#00ffcc;
-margin-top:20px;
-cursor:pointer;
-}
-.result{
-margin-top:30px;
-background:rgba(255,255,255,0.1);
-padding:15px;
-border-radius:10px;
-}
+body{margin:0;font-family:Arial;background:linear-gradient(135deg,#141e30,#243b55);color:white;text-align:center;padding:20px;}
+h1{margin-top:30px;}
+input{padding:10px;width:80%;max-width:300px;border-radius:10px;border:none;margin-top:20px;}
+button{padding:10px 20px;border:none;border-radius:20px;background:#00ffcc;margin-top:20px;cursor:pointer;}
+.result{margin-top:30px;background:rgba(255,255,255,0.1);padding:15px;border-radius:10px;}
+.copyBtn{margin-top:15px;background:#ffdd59;color:black;}
 </style>
 </head>
-
-<body>
-
-<h1>YugMind Insta Bio Generator 🚀</h1>
-
+<body><h1>Exercise AI Insta Bio Generator 🚀</h1>
 <input type="text" id="name" placeholder="Enter Your Name">
-
 <br>
 <button onclick="generateBio()">Generate Bio</button>
-
 <div class="result" id="output"></div>
-
-<script>
+<button class="copyBtn" onclick="copyBio()">Copy Bio</button><script>
 function generateBio(){
 let name = document.getElementById("name").value;
-
 if(name==""){
 document.getElementById("output").innerHTML="Please enter your name!";
 return;
 }
-
 let bios = [
-"🔥 " + name + " | Dream Big 💫 | Hustle Mode ON 🚀",
-"👑 " + name + " | Born to Shine ✨ | Future Millionaire 💰",
-"😎 " + name + " | Attitude King 👊 | Believe & Achieve 💯",
-"💎 " + name + " | Simple but Savage 🔥 | Stay Real 🤍"
+`🔥 ${name} | Dream Big 💫 | Hustle Mode ON 🚀`,
+`👑 ${name} | Born to Shine ✨ | Future Millionaire 💰`,
+`😎 ${name} | Attitude King 👊 | Believe & Achieve 💯`,
+`💎 ${name} | Simple but Savage 🔥 | Stay Real 🤍`,
+`🌟 ${name} | Goals > Excuses | Rise & Grind 💪`
 ];
-
 let randomBio = bios[Math.floor(Math.random()*bios.length)];
-
 document.getElementById("output").innerHTML=randomBio;
 }
-</script>
-
-</body>
+function copyBio(){
+let bioText = document.getElementById("output").innerText;
+if(bioText==""){
+alert("No bio to copy!");
+return;
+}
+navigator.clipboard.writeText(bioText).then(()=>{
+alert("Bio copied to clipboard ✅");
+});
+}
+</script></body>
 </html>
