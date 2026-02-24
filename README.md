@@ -1,2 +1,77 @@
-# Yugmind-
-YugMind – Digital Solutions for Modern Businesses
+<!DOCTYPE html>
+<html>
+<head>
+<title>YugMind - Insta Bio Generator</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+margin:0;
+font-family:Arial;
+background:linear-gradient(135deg,#141e30,#243b55);
+color:white;
+text-align:center;
+padding:20px;
+}
+h1{
+margin-top:30px;
+}
+input{
+padding:10px;
+width:80%;
+max-width:300px;
+border-radius:10px;
+border:none;
+margin-top:20px;
+}
+button{
+padding:10px 20px;
+border:none;
+border-radius:20px;
+background:#00ffcc;
+margin-top:20px;
+cursor:pointer;
+}
+.result{
+margin-top:30px;
+background:rgba(255,255,255,0.1);
+padding:15px;
+border-radius:10px;
+}
+</style>
+</head>
+
+<body>
+
+<h1>YugMind Insta Bio Generator 🚀</h1>
+
+<input type="text" id="name" placeholder="Enter Your Name">
+
+<br>
+<button onclick="generateBio()">Generate Bio</button>
+
+<div class="result" id="output"></div>
+
+<script>
+function generateBio(){
+let name = document.getElementById("name").value;
+
+if(name==""){
+document.getElementById("output").innerHTML="Please enter your name!";
+return;
+}
+
+let bios = [
+"🔥 " + name + " | Dream Big 💫 | Hustle Mode ON 🚀",
+"👑 " + name + " | Born to Shine ✨ | Future Millionaire 💰",
+"😎 " + name + " | Attitude King 👊 | Believe & Achieve 💯",
+"💎 " + name + " | Simple but Savage 🔥 | Stay Real 🤍"
+];
+
+let randomBio = bios[Math.floor(Math.random()*bios.length)];
+
+document.getElementById("output").innerHTML=randomBio;
+}
+</script>
+
+</body>
+</html>
